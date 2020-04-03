@@ -1,7 +1,31 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
+
+const categories = [
+  'Animals',
+  'Backgrounds',
+  'Buildings',
+  'Business',
+  'Computer',
+  'Education',
+  'Fashion',
+  'Feelings',
+  'Food',
+  'Health',
+  'Industry',
+  'Music',
+  'Nature',
+  'People',
+  'Places',
+  'Religion',
+  'Science',
+  'Sports',
+  'Transportation',
+  'Travel',
+];
 
 const useStyles = makeStyles({
   padding: {
@@ -52,7 +76,13 @@ const Search = ({ onSearch }) => {
         className={classes.padding}
         onChange={handleCategoryChange}
         value={category}
-      />
+      >
+        {categories.map((category) => (
+          <MenuItem key={category} value={category.toLowerCase()}>
+            {category}
+          </MenuItem>
+        ))}
+      </TextField>
       <Button
         color="primary"
         variant="contained"
