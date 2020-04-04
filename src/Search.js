@@ -28,12 +28,12 @@ const categories = [
 ];
 
 const useStyles = makeStyles({
-  padding: {
-    margin: 8,
-  },
-  base: {
+  root: {
     minWidth: 50,
     maxWidth: 375,
+  },
+  spacing: {
+    margin: 8,
   },
   button: {
     textTransform: 'none',
@@ -64,12 +64,12 @@ const Search = ({ onSearch }) => {
   };
 
   return (
-    <form className={classes.base} onSubmit={handleSubmit}>
+    <form className={classes.root} onSubmit={handleSubmit}>
       <TextField
         label="Keyword..."
         variant="outlined"
         fullWidth
-        className={classes.padding}
+        className={classes.spacing}
         onChange={handleKeywordChange}
         value={keyword}
       />
@@ -78,7 +78,7 @@ const Search = ({ onSearch }) => {
         variant="outlined"
         label="Category..."
         fullWidth
-        className={classes.padding}
+        className={classes.spacing}
         onChange={handleCategoryChange}
         value={category}
       >
@@ -95,7 +95,6 @@ const Search = ({ onSearch }) => {
         size="large"
         fullWidth
         className={classes.button}
-        classes={{ root: classes.buttonCasing }}
       >
         Search
       </Button>

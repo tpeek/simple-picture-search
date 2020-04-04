@@ -13,7 +13,7 @@ const savedMessageStyles = {
 };
 
 const useStyles = makeStyles({
-  base: {
+  root: {
     position: 'relative',
     maxWidth: 400,
     margin: '40px 0',
@@ -22,14 +22,6 @@ const useStyles = makeStyles({
       clear: 'both',
       display: 'table',
     },
-  },
-  tag: {
-    color: 'white',
-    backgroundColor: '#00a48f',
-    padding: '2px 5px',
-    margin: 4,
-    display: 'inline-block',
-    fontSize: 14,
   },
   img: {
     float: 'left',
@@ -49,47 +41,64 @@ const useStyles = makeStyles({
     ...savedMessageStyles,
     backgroundColor: '#ea8928',
   },
+  tagContainer: {
+    float: 'left',
+    display: 'flex',
+    flexWrap: 'wrap',
+    width: 160,
+    marginLeft: 16,
+  },
+  tag: {
+    color: 'white',
+    backgroundColor: '#00a48f',
+    padding: '2px 5px',
+    margin: 4,
+    display: 'inline-block',
+    fontSize: 14,
+  },
+  socialContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 224,
+    fontSize: 12,
+    fontWeight: 'bold',
+  },
+  thumb: {
+    marginLeft: 5,
+    marginBottom: -2,
+    height: 14,
+    width: 14,
+    marginRight: 32,
+  },
+  star: {
+    marginLeft: 5,
+    marginBottom: -3,
+    height: 16,
+    width: 16,
+  },
 });
 
 const SearchResult = ({ previewURL, tags, likes, favorites, saveResult, saved }) => {
   const classes = useStyles();
 
   return (
-    <li className={classes.base}>
+    <li className={classes.root}>
       <img src={previewURL} className={classes.img} onClick={saveResult} />
       <p className={saved ? classes.savedMessage : classes.saveMessage}>
         {saved ? 'Saved' : 'Save'}
       </p>
-      <div
-        style={{
-          float: 'left',
-          display: 'flex',
-          flexWrap: 'wrap',
-          width: 160,
-          marginLeft: 16,
-        }}
-      >
+      <div className={classes.tagContainer}>
         {tags.split(', ').map((category) => (
           <span className={classes.tag} key={category}>
             {category}
           </span>
         ))}
       </div>
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 224,
-          fontSize: 12,
-          fontWeight: 'bold',
-        }}
-      >
+      <div className={classes.socialContainer}>
         <span>{likes}</span>
-        <ThumbUp
-          style={{ marginLeft: 5, marginBottom: -2, height: 14, width: 14, marginRight: 32 }}
-        />
+        <ThumbUp className={classes.thumb} />
         <span>{favorites}</span>
-        <Star style={{ marginLeft: 5, marginBottom: -3, height: 16, width: 16 }} />
+        <Star className={classes.star} />
       </div>
     </li>
   );
