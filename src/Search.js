@@ -34,7 +34,7 @@ const useStyles = makeStyles({
   base: {
     margin: '16px auto',
     minWidth: 50,
-    maxWidth: 350,
+    maxWidth: 375,
   },
   button: {
     textTransform: 'none',
