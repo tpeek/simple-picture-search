@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   },
 });
 
-function App() {
+const App = () => {
   const classes = useStyles();
   const [results, setResults] = useState([]);
   const [savedResults, setSavedResults] = useState([]);
@@ -62,6 +62,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
