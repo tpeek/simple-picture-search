@@ -57,8 +57,14 @@ const Search = ({ onSearch }) => {
     setCategory(e.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    onSearch(keyword, category);
+  };
+
   return (
-    <div className={classes.base}>
+    <form className={classes.base} onSubmit={handleSubmit}>
       <TextField
         label="Keyword..."
         variant="outlined"
@@ -85,15 +91,15 @@ const Search = ({ onSearch }) => {
       <Button
         color="primary"
         variant="contained"
+        type="submit"
         size="large"
         fullWidth
         className={classes.button}
         classes={{ root: classes.buttonCasing }}
-        onClick={() => onSearch(keyword, category)}
       >
         Search
       </Button>
-    </div>
+    </form>
   );
 };
 
