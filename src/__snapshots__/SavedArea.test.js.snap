@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SavedArea /> renders snapshot correctly 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <h2>
+    Saved
+  </h2>
+  <WithStyles(ForwardRef(Link))
+    className="makeStyles-link-2"
+    href="https://www.example.com"
+    key="1"
+    target="_blank"
+  >
+    #
+    1
+    <OpenInNewIcon
+      className="makeStyles-openIcon-3"
+    />
+  </WithStyles(ForwardRef(Link))>
+</div>
+`;

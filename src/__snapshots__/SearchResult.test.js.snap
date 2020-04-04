@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchResult /> renders snapshot correctly 1`] = `
+<li
+  className="makeStyles-root-1"
+>
+  <img
+    className="makeStyles-img-2"
+    onClick={[MockFunction]}
+    src="https://www.example.com"
+  />
+  <p
+    className="makeStyles-saveMessage-3"
+  >
+    Save
+  </p>
+  <div
+    className="makeStyles-tagContainer-5"
+  >
+    <span
+      className="makeStyles-tag-6"
+      key="animals"
+    >
+      animals
+    </span>
+    <span
+      className="makeStyles-tag-6"
+      key="tigers"
+    >
+      tigers
+    </span>
+    <span
+      className="makeStyles-tag-6"
+      key="circus"
+    >
+      circus
+    </span>
+  </div>
+  <div
+    className="makeStyles-socialContainer-7"
+  >
+    <span>
+      9001
+    </span>
+    <ThumbUpIcon
+      className="makeStyles-thumb-8"
+    />
+    <span>
+      42
+    </span>
+    <StarRoundedIcon
+      className="makeStyles-star-9"
+    />
+  </div>
+</li>
+`;
