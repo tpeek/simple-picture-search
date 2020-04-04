@@ -3,6 +3,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import ThumbUp from '@material-ui/icons/ThumbUp';
 import Star from '@material-ui/icons/StarRounded';
 
+const savedMessageStyles = {
+  color: 'white',
+  position: 'absolute',
+  textAlign: 'center',
+  bottom: -16,
+  width: 200,
+  padding: '2px 0',
+};
+
 const useStyles = makeStyles({
   base: {
     position: 'relative',
@@ -22,14 +31,35 @@ const useStyles = makeStyles({
     display: 'inline-block',
     fontSize: 14,
   },
+  img: {
+    float: 'left',
+    width: 200,
+    '&:hover': {
+      '& + p': {
+        display: 'block',
+      },
+    },
+  },
+  saveMessage: {
+    ...savedMessageStyles,
+    display: 'none',
+    backgroundColor: '#be4362',
+  },
+  savedMessage: {
+    ...savedMessageStyles,
+    backgroundColor: '#ea8928',
+  },
 });
 
-const SearchResult = ({ previewURL, tags, likes, favorites, saveResult }) => {
+const SearchResult = ({ previewURL, tags, likes, favorites, saveResult, saved }) => {
   const classes = useStyles();
 
   return (
     <li className={classes.base}>
-      <img src={previewURL} style={{ float: 'left' }} width="200px" onClick={saveResult} />
+      <img src={previewURL} className={classes.img} onClick={saveResult} />
+      <p className={saved ? classes.savedMessage : classes.saveMessage}>
+        {saved ? 'Saved' : 'Save'}
+      </p>
       <div
         style={{
           float: 'left',

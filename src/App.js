@@ -32,7 +32,12 @@ function App() {
         <Search onSearch={fetchSearchResults} />
         <ul>
           {results.map((result) => (
-            <SearchResult key={result.id} saveResult={() => saveResult(result)} {...result} />
+            <SearchResult
+              key={result.id}
+              saveResult={() => saveResult(result)}
+              saved={savedResults.some((existing) => existing.id === result.id)}
+              {...result}
+            />
           ))}
         </ul>
       </div>
