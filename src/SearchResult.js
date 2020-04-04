@@ -7,7 +7,7 @@ const useStyles = makeStyles({
   base: {
     position: 'relative',
     maxWidth: 400,
-    margin: '40px auto',
+    margin: '40px 0',
     '&::after': {
       content: '" "',
       clear: 'both',
@@ -24,12 +24,12 @@ const useStyles = makeStyles({
   },
 });
 
-const SearchResult = ({ previewURL, tags, likes, favorites }) => {
+const SearchResult = ({ previewURL, tags, likes, favorites, saveResult }) => {
   const classes = useStyles();
 
   return (
     <li className={classes.base}>
-      <img src={previewURL} style={{ float: 'left' }} width="200px" />
+      <img src={previewURL} style={{ float: 'left' }} width="200px" onClick={saveResult} />
       <div
         style={{
           float: 'left',

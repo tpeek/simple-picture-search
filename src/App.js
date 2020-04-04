@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React, { useState } from 'react';
 import Search from './Search';
 import SearchResult from './SearchResult';
+import SavedArea from './SavedArea';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 function App() {
   const [results, setResults] = useState([]);
+  const [savedResults, setSavedResults] = useState([]);
+
+  const saveResult = (result) => {
+    if (!savedResults.some((existing) => existing.id === result.id)) {
+      setSavedResults([...savedResults, result]);
+    }
+  };
 
   const fetchSearchResults = (keyword = '', category = '') => {
     fetch(
@@ -19,18 +26,19 @@ function App() {
     });
   };
 
-  useEffect(() => {
-    fetchSearchResults();
-  }, []);
-
   return (
-    <div className="App">
-      <Search onSearch={fetchSearchResults} />
-      <ul>
-        {results.map(({ id, ...rest }) => (
-          <SearchResult key={id} id={id} {...rest} />
-        ))}
-      </ul>
+    <div style={{ maxWidth: 650, margin: '0 auto', marginTop: 20 }}>
+      <div style={{ display: 'inline-block' }}>
+        <Search onSearch={fetchSearchResults} />
+        <ul>
+          {results.map((result) => (
+            <SearchResult key={result.id} saveResult={() => saveResult(result)} {...result} />
+          ))}
+        </ul>
+      </div>
+      <div style={{ float: 'right' }}>
+        <SavedArea savedResults={savedResults} />
+      </div>
     </div>
   );
 }

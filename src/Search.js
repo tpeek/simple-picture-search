@@ -32,7 +32,6 @@ const useStyles = makeStyles({
     margin: 8,
   },
   base: {
-    margin: '16px auto',
     minWidth: 50,
     maxWidth: 375,
   },
