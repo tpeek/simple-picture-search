@@ -33,11 +33,11 @@ const useStyles = makeStyles({
     maxWidth: 375,
   },
   spacing: {
-    margin: 8,
+    margin: '8px 0',
   },
   button: {
+    margin: '8px 0',
     textTransform: 'none',
-    margin: 8,
     backgroundColor: '#3e00d5',
     height: 56,
     fontSize: 20,
