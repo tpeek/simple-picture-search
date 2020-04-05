@@ -83,7 +83,7 @@ const SearchResult = ({ previewURL, tags, likes, favorites, saveResult, saved })
 
   return (
     <li className={classes.root}>
-      <img src={previewURL} className={classes.img} onClick={saveResult} />
+      <img src={previewURL} className={classes.img} onClick={saveResult} alt={tags} />
       <p className={saved ? classes.savedMessage : classes.saveMessage}>
         {saved ? 'Saved' : 'Save'}
       </p>

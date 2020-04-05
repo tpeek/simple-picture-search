@@ -5,6 +5,7 @@ exports[`<SearchResult /> renders snapshot correctly 1`] = `
   className="makeStyles-root-1"
 >
   <img
+    alt="animals, tigers, circus"
     className="makeStyles-img-2"
     onClick={[MockFunction]}
     src="https://www.example.com"
