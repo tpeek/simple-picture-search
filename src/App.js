@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Search from './Search';
-import SearchResult from './SearchResult';
+import SearchResults from './SearchResults';
 import SavedArea from './SavedArea';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
@@ -46,16 +46,7 @@ const App = () => {
     <div className={classes.root}>
       <div className={classes.leftPanel}>
         <Search onSearch={fetchSearchResults} />
-        <ul>
-          {results.map((result) => (
-            <SearchResult
-              key={result.id}
-              saveResult={() => saveResult(result)}
-              saved={savedResults.some((existing) => existing.id === result.id)}
-              {...result}
-            />
-          ))}
-        </ul>
+        <SearchResults results={results} savedResults={savedResults} saveResult={saveResult} />
       </div>
       <div className={classes.rightPanel}>
         <SavedArea savedResults={savedResults} />
