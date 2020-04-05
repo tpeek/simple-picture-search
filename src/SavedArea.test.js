@@ -13,4 +13,10 @@ describe('<SavedArea />', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('renders snapshot correctly when there are no savedResults', () => {
+    const wrapper = setup({ savedResults: [] });
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });

@@ -21,3 +21,13 @@ exports[`<SavedArea /> renders snapshot correctly 1`] = `
   </WithStyles(ForwardRef(Link))>
 </div>
 `;
+
+exports[`<SavedArea /> renders snapshot correctly when there are no savedResults 1`] = `
+<div
+  className="makeStyles-root-1"
+>
+  <h2>
+    Saved
+  </h2>
+</div>
+`;

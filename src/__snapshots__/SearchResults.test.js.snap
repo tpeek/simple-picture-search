@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<SearchResults /> renders an empty list when there are no results 1`] = `<ul />`;
+
 exports[`<SearchResults /> renders snapshot correctly 1`] = `
 <ul>
   <SearchResult

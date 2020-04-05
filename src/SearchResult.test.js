@@ -18,4 +18,28 @@ describe('<SearchResult />', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('shows "Saved" text when saved = true', () => {
+    const wrapper = setup({ saved: true });
+
+    expect(wrapper.find('p').text()).toBe('Saved');
+  });
+
+  it('sets proper class when saved = true', () => {
+    const wrapper = setup({ saved: true });
+
+    expect(wrapper.find('p').props().className).toBe('makeStyles-savedMessage-4');
+  });
+
+  it('shows "Save" text when saved = false', () => {
+    const wrapper = setup({ saved: false });
+
+    expect(wrapper.find('p').text()).toBe('Save');
+  });
+
+  it('sets proper class when saved = false', () => {
+    const wrapper = setup({ saved: false });
+
+    expect(wrapper.find('p').props().className).toBe('makeStyles-saveMessage-3');
+  });
 });

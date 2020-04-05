@@ -32,11 +32,10 @@ const App = () => {
   };
 
   const fetchSearchResults = (keyword = '', category = '') => {
-    fetch(
+    return fetch(
       `https://pixabay.com/api/?key=${API_KEY}&q=${keyword}&category=${category}&image_type=photo&per_page=10`
     ).then((result) => {
       result.json().then((json) => {
-        console.log(json);
         setResults(json.hits);
       });
     });
