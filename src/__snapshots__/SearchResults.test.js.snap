@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchResults /> renders snapshot correctly 1`] = `
+<ul>
+  <SearchResult
+    favorites={42}
+    id={1}
+    key="1"
+    likes={9001}
+    previewURL="https://www.example.com"
+    saveResult={[Function]}
+    saved={true}
+    tags="animals, tigers, circus"
+  />
+</ul>
+`;
