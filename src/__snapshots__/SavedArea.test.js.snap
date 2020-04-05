@@ -4,6 +4,16 @@ exports[`<SavedArea /> renders snapshot correctly 1`] = `
 <div
   className="makeStyles-root-1"
 >
+  <a
+    href="https://pixabay.com/"
+  >
+    <img
+      alt="Pixabay"
+      src="https://pixabay.com/static/img/public/medium_rectangle_a.png"
+      target="_blank"
+      width={150}
+    />
+  </a>
   <h2>
     Saved
   </h2>
@@ -26,6 +36,16 @@ exports[`<SavedArea /> renders snapshot correctly when there are no savedResults
 <div
   className="makeStyles-root-1"
 >
+  <a
+    href="https://pixabay.com/"
+  >
+    <img
+      alt="Pixabay"
+      src="https://pixabay.com/static/img/public/medium_rectangle_a.png"
+      target="_blank"
+      width={150}
+    />
+  </a>
   <h2>
     Saved
   </h2>
